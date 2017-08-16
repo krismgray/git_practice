@@ -1,6 +1,23 @@
-puts 'Learning Git'
+def puts_git(cmd)
+  puts `git #{cmd} -h`
+end
 
-first_name = 'Kris'
-last_name = 'Gray'
+def menu
+  puts '1: Enter Git Command'
+  puts '2: Exit'
+  choice = gets.to_i
+ case choice
+   when 1
+     puts 'Enter a Git Command'
+     puts_git(gets.strip)
+   when 2
+     puts 'Thanks for using the git comand'
+     exit
+   else
+     puts 'Wrong choice jack weed'
+     menu #calles the method, We are in the def menu method right now
+ end
+ menu
+end
 
-puts "Hello #{first_name} #{last_name}"
+menu
